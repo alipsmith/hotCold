@@ -3,7 +3,7 @@ $(document).ready(function(){
 	
 
 //variables
-var randomNumVar = 0;
+
 var userGuess = $('input#userGuess').val();
 
 //on load, automatically generates random number
