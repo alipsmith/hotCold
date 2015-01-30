@@ -13,8 +13,8 @@ $(document).ready(function(){
   	});
 
 //variables
-var randomNumVar;
-var userGuess;
+var randomNumVar = 0;
+var userGuess = $('input#userGuess').val();
 
 //on load, automatically generates random number
 randomNumFunc();
@@ -24,7 +24,7 @@ $('form').on('submit', function() {
 	event.preventDefault();
 	var userGuess = $('input#userGuess').val();
 	if ((userGuess > 0) && (userGuess < 101)) {
-		playGame();
+		guessNumber();
 		clearInputField();
 	}else{
 		$('h2#feedback').html('Between 1 and 100!');
@@ -33,16 +33,16 @@ $('form').on('submit', function() {
 });
 
 //game play after user clicks guess-button
-function playGame() {
+function guessNumber() {
 	var userGuess = $('input#userGuess').val();
 	$('ul#guessList').append('<li>' + userGuess + '</li>');
 	guessCounter();
 	resetFeedback();
-	hotCold();	
+	hotColdFeedback();	
 }
 
 //hot and cold feedback
-function hotCold() {
+function hotColdFeedback() {
 	console.log(userGuess);
 	console.log(randomNumVar);
 	if (userGuess === randomNumVar) {
@@ -57,6 +57,7 @@ function hotCold() {
 $('.new').on('click', function() {
 	clearInputField();
 	resetFeedback();
+	randomNumFunc();
 	$('span#count').html('0');
 	$('ul#guessList').empty();
 });
