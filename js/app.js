@@ -1,16 +1,6 @@
 
 $(document).ready(function(){
 	
-	/*--- Display information modal box ---*/
-  	$(".what").click(function(){
-    	$(".overlay").fadeIn(1000);
-
-  	});
-
-  	/*--- Hide information modal box ---*/
-  	$("a.close").click(function(){
-  		$(".overlay").fadeOut(1000);
-  	});
 
 //variables
 var randomNumVar = 0;
@@ -22,7 +12,8 @@ randomNumFunc();
 // user enters number and clicks guess-button
 $('form').on('submit', function() {
 	event.preventDefault();
-	var userGuess = $('input#userGuess').val();
+	console.log(userGuess);
+	console.log(randomNumVar);
 	if ((userGuess > 0) && (userGuess < 101)) {
 		guessNumber();
 		clearInputField();
@@ -34,7 +25,6 @@ $('form').on('submit', function() {
 
 //game play after user clicks guess-button
 function guessNumber() {
-	var userGuess = $('input#userGuess').val();
 	$('ul#guessList').append('<li>' + userGuess + '</li>');
 	guessCounter();
 	resetFeedback();
@@ -43,9 +33,7 @@ function guessNumber() {
 
 //hot and cold feedback
 function hotColdFeedback() {
-	console.log(userGuess);
-	console.log(randomNumVar);
-	if (userGuess === randomNumVar) {
+	if (userGuess == randomNumVar) {
 		$('h2#feedback').html('Bingo!');	
 	}
 	else if (userGuess >= (randomNumVar+50)) {
@@ -64,7 +52,7 @@ $('.new').on('click', function() {
 
 // returns random integer //
 function randomNumFunc() {
-var randomNumVar = Math.floor(Math.random()*100);
+var randomNumVar = Math.floor((Math.random() * 100) + 1);
 console.log('your random number is ' + randomNumVar);
 }
 
@@ -85,7 +73,16 @@ function clearInputField () {
 }
  
 
+	/*--- Display information modal box ---*/
+  	$(".what").click(function(){
+    	$(".overlay").fadeIn(1000);
 
+  	});
+
+  	/*--- Hide information modal box ---*/
+  	$("a.close").click(function(){
+  		$(".overlay").fadeOut(1000);
+  	});
 
 
 
