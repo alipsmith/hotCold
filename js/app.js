@@ -61,7 +61,7 @@ $('.new').on('click', function() {
 
 // returns random integer //
 function randomNumFunc() {
-var randomNumVar = Math.floor((Math.random() * 100) + 1);
+var randomNumVar = Math.floor(Math.random()*100);
 console.log('your random number is ' + randomNumVar);
 return randomNumVar;
 }
