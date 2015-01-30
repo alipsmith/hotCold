@@ -2,9 +2,11 @@
 $(document).ready(function(){
 	
 
-//variables
+var guessedNumber = guessNumber();
 
-var userGuess = $('input#userGuess').val();
+function guessNumber() {
+$('input#userGuess').val();
+}
 
 //on load, automatically generates random number
 randomNumFunc();
@@ -12,10 +14,9 @@ randomNumFunc();
 // user enters number and clicks guess-button
 $('form').on('submit', function() {
 	event.preventDefault();
-	console.log(userGuess);
-	console.log(randomNumVar);
-	if ((userGuess > 0) && (userGuess < 101)) {
-		guessNumber();
+	guessNumber();
+	console.log(guessedNumber;
+	if ((guessedNumber > 0) && (guessedNumber < 101)) {
 		clearInputField();
 	}else{
 		$('h2#feedback').html('Between 1 and 100!');
@@ -24,8 +25,8 @@ $('form').on('submit', function() {
 });
 
 //game play after user clicks guess-button
-function guessNumber() {
-	$('ul#guessList').append('<li>' + userGuess + '</li>');
+function buildGuessList() {
+	$('ul#guessList').append('<li>' + guessedNumber + '</li>');
 	guessCounter();
 	resetFeedback();
 	hotColdFeedback();	
@@ -33,10 +34,10 @@ function guessNumber() {
 
 //hot and cold feedback
 function hotColdFeedback() {
-	if (userGuess == randomNumVar) {
+	if (guessedNumber == randomNumVar) {
 		$('h2#feedback').html('Bingo!');	
 	}
-	else if (userGuess >= (randomNumVar+50)) {
+	else if (guessedNumber >= (randomNumVar+50)) {
 		$('h2#feedback').html('You\'re in the Dead Zone!');	
 	}
 }
@@ -54,6 +55,7 @@ $('.new').on('click', function() {
 function randomNumFunc() {
 var randomNumVar = Math.floor((Math.random() * 100) + 1);
 console.log('your random number is ' + randomNumVar);
+return randomNumVar;
 }
 
 //reset feedback field
