@@ -13,8 +13,8 @@ $(document).ready(function(){
   	});
 
 //variables
-var randomNumVar;
-var userGuess;
+var randomNumVar = Math.floor(Math.random()*100);
+var userGuess = $('input#userGuess').val();
 
 //on load, automatically generates random number
 randomNumFunc();
@@ -43,6 +43,8 @@ function playGame() {
 
 //hot and cold feedback
 function hotCold() {
+	console.log(userGuess);
+	console.log(randomNumVar);
 	if (userGuess === randomNumVar) {
 		$('h2#feedback').html('Bingo!');	
 	}
