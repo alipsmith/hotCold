@@ -63,7 +63,6 @@ $('.new').on('click', function() {
 function randomNumFunc() {
 var randomNumVar = Math.floor(Math.random()*100);
 console.log('your random number is ' + randomNumVar);
-return randomNumVar;
 }
 
 //reset feedback field
