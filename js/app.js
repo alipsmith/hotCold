@@ -13,8 +13,8 @@ $(document).ready(function(){
   	});
 
 //variables
-var randomNumVar = Math.floor(Math.random()*100);
-var userGuess = $('input#userGuess').val();
+var randomNumVar;
+var userGuess;
 
 //on load, automatically generates random number
 randomNumFunc();
@@ -22,7 +22,7 @@ randomNumFunc();
 // user enters number and clicks guess-button
 $('form').on('submit', function() {
 	event.preventDefault();
-
+	var userGuess = $('input#userGuess').val();
 	if ((userGuess > 0) && (userGuess < 101)) {
 		playGame();
 		clearInputField();
@@ -34,7 +34,7 @@ $('form').on('submit', function() {
 
 //game play after user clicks guess-button
 function playGame() {
-	
+	var userGuess = $('input#userGuess').val();
 	$('ul#guessList').append('<li>' + userGuess + '</li>');
 	guessCounter();
 	resetFeedback();
