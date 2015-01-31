@@ -3,6 +3,7 @@ $(document).ready(function(){
 	
 var randomNumVar;
 
+
 randomNumFunc();
 
 // user enters number and clicks guess-button
@@ -19,7 +20,7 @@ $('form').on('submit', function() {
 	}
 });
 
-//game play after user clicks guess-button
+//builds guess list after user clicks guess-button
 function buildGuessList() {
 	$('ul#guessList').append('<li>' + guessedNumber + '</li>');
 	guessCounter();
@@ -31,7 +32,8 @@ function buildGuessList() {
 function hotColdFeedback() {
 	var differenceNum = Math.abs(randomNumVar-guessedNumber);
 	if (guessedNumber == randomNumVar) {
-		$('h2#feedback').html('Bingo! Are you a psychic or do you just guess like one?');	
+		$('h2#feedback').html('Bingo! Are you a psychic or do you just guess like one?<br>Hit NEW GAME to play again.');
+		$('input').prop('disabled', true);
 	}
 	else if (differenceNum >= 50) {
 		$('h2#feedback').html('Freezing to death!');	
@@ -61,6 +63,7 @@ function hotColdFeedback() {
 
 // new game -->
 $('.new').on('click', function() {
+	$('input').prop('disabled', false);
 	clearInputField();
 	resetFeedback();
 	randomNumFunc();
