@@ -36,7 +36,7 @@ function hotColdFeedback() {
 		$('input').prop('disabled', true);
 	}
 	else if (differenceNum >= 50) {
-		$('h2#feedback').html('Freezing to death!');	
+		$('h2#feedback').html('Frozen to death.');	
 	}
 	else if (differenceNum >= 30) {
 		$('h2#feedback').html('Frostbitten but not dead.');	
