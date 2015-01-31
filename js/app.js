@@ -32,7 +32,7 @@ function buildGuessList() {
 function hotColdFeedback() {
 	var differenceNum = Math.abs(randomNumVar-guessedNumber);
 	if (guessedNumber == randomNumVar) {
-		$('h2#feedback').html('Bingo! Are you a psychic or do you just guess like one?<br>Hit NEW GAME to play again.');
+		$('h2#feedback').html('Bingo! Are you a psychic or do you just think like one?<br>Hit NEW GAME to play again.');
 		$('input').prop('disabled', true);
 	}
 	else if (differenceNum >= 50) {
