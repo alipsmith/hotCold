@@ -2,11 +2,6 @@
 $(document).ready(function(){
 	
 
-var guessedNumber = guessNumber();
-
-function guessNumber() {
-$('input#userGuess').val();
-}
 
 //on load, automatically generates random number
 randomNumFunc();
@@ -14,10 +9,11 @@ randomNumFunc();
 // user enters number and clicks guess-button
 $('form').on('submit', function() {
 	event.preventDefault();
-	guessNumber();
-	console.log(guessedNumber;
+	guessedNumber=$('input#userGuess').val();
+	console.log(guessedNumber);
 	if ((guessedNumber > 0) && (guessedNumber < 101)) {
 		clearInputField();
+		buildGuessList();
 	}else{
 		$('h2#feedback').html('Between 1 and 100!');
 		clearInputField();
@@ -55,7 +51,6 @@ $('.new').on('click', function() {
 function randomNumFunc() {
 var randomNumVar = Math.floor((Math.random() * 100) + 1);
 console.log('your random number is ' + randomNumVar);
-return randomNumVar;
 }
 
 //reset feedback field
