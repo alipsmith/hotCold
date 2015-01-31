@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 
 //on load, automatically generates random number
-randomNumFunc();
+
 
 // user enters number and clicks guess-button
 $('form').on('submit', function() {
