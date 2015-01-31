@@ -1,6 +1,9 @@
 
 $(document).ready(function(){
 	
+var randomNumVar;
+
+randomNumFunc();
 
 // user enters number and clicks guess-button
 $('form').on('submit', function() {
@@ -26,6 +29,7 @@ function buildGuessList() {
 
 //hot and cold feedback
 function hotColdFeedback() {
+
 	if (guessedNumber == randomNumVar) {
 		$('h2#feedback').html('Bingo!');	
 	}
@@ -45,7 +49,7 @@ $('.new').on('click', function() {
 
 // returns random integer //
 function randomNumFunc() {
-var randomNumVar = Math.floor((Math.random() * 100) + 1);
+randomNumVar = Math.floor((Math.random() * 100) + 1);
 console.log('your random number is ' + randomNumVar);
 }
 
