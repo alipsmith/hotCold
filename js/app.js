@@ -29,12 +29,33 @@ function buildGuessList() {
 
 //hot and cold feedback
 function hotColdFeedback() {
-
+	var differenceNum = Math.abs(randomNumVar-guessedNumber);
 	if (guessedNumber == randomNumVar) {
-		$('h2#feedback').html('Bingo!');	
+		$('h2#feedback').html('Bingo! Are you a psychic or do you just guess like one?');	
 	}
-	else if (guessedNumber >= (randomNumVar+50)) {
-		$('h2#feedback').html('You\'re in the Dead Zone!');	
+	else if (differenceNum >= 50) {
+		$('h2#feedback').html('Freezing to death!');	
+	}
+	else if (differenceNum >= 30) {
+		$('h2#feedback').html('Frostbitten but not dead.');	
+	}
+	else if (differenceNum >= 20) {
+		$('h2#feedback').html('Here comes the sun...');	
+	}
+	else if (differenceNum >= 10) {
+		$('h2#feedback').html('Is it stuffy in here?');	
+	}
+	else if (differenceNum >= 5) {
+		$('h2#feedback').html('Sweating profusely.');	
+	}
+	else if (differenceNum >= 3) {
+		$('h2#feedback').html('You\'re about to combust!');	
+	}
+	else if (differenceNum >= 2) {
+		$('h2#feedback').html('You\'re combusting!');	
+	}
+	else if (differenceNum >= 1) {
+		$('h2#feedback').html('GAH!  Just move your finger a nanometer!');	
 	}
 }
 
@@ -55,7 +76,7 @@ console.log('your random number is ' + randomNumVar);
 
 //reset feedback field
 function resetFeedback() {
-	$('h2#feedback').html('Make Your Guess!');
+	$('h2#feedback').html('Make your guess!');
 }
 
 //guess counter
