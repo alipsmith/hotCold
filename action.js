@@ -2,10 +2,6 @@
 
 	Project Name: hotORcold
 	Project Description: A Thinkful Hot or Cold Project Revisited
-	File Name: animation.js
-	Author: Jeya Karthika
-	Author URI: http://www.freshsqueaks.com
-	Version: 3.4
 	
 ----------------------------------------------------------------------------------*/
 
